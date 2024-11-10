@@ -36,17 +36,25 @@ export const addArticles = (article) => {
     });
 }
 
-export const deleteArticles = async (date) => {
-    try {
-        const data = await sendRequest({
-            url: '/deleteRecords',
-            method: 'POST',
-            data: date,
-        });
-        // console.log('POST 请求返回的数据:', data);
-    } catch (error) {
-        console.error('POST 请求失败:', error);
-    }
+export const deleteArticles = async (articleId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await sendRequest({
+                url: '/deleteArticles',
+                method: 'POST',
+                data: { id: articleId },
+            });
+
+            if (response.status === '200') {
+                resolve(response);  // 返回成功结果
+            } else {
+                reject(new Error("更新失败"));  // 返回失败错误
+            }
+        } catch (error) {
+            console.error('POST 请求失败:', error);
+            reject(error);  // 返回捕获的错误
+        }
+    });
 }
 
 export const updataArticles = (article) => {

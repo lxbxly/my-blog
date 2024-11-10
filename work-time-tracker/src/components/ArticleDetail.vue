@@ -157,6 +157,10 @@ const viewAtricleDetail = () => {
   }
 };
 
+defineExpose({
+  viewAtricleDetail,
+});
+
 const resetFormValue = () => {
   editorContent.value = "";
   editorTitle.value = "";

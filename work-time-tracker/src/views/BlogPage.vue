@@ -16,6 +16,7 @@
       </div>
       <SideBar />
     </div>
+    <div class="findMore"><router-link to="/articleList">发现更多>>></router-link></div>
   </div>
 </template>
 
@@ -44,8 +45,8 @@ onMounted(() => {
   display: flex;
   flex: 1; /* 占据剩余空间 */
   gap: 20px;
-  padding: 20px;
-  height: 100%;
+  padding: 20px 20px 10px 20px;
+  height: calc(100% - 30px);
 }
 
 /* 主体和侧边栏布局 */
@@ -56,5 +57,10 @@ onMounted(() => {
 
 .sidebar {
   flex: 1;
+}
+
+.findMore{
+  text-align: center;
+  padding-bottom: 15px;
 }
 </style>

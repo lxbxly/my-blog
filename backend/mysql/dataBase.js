@@ -177,6 +177,22 @@ const getArticles = async (id) => {
     }
 };
 
+// 删除文章
+const deleteArticles = async ({ id }) => {
+    const sql = 'DELETE FROM documents WHERE id = ?';  // 使用 = 运算符进行精确匹配
+
+    try {
+        console.log('查询的文章:', id);  // 打印传入的日期，调试用
+        // 执行查询
+        const [rows] = await pool.query(sql, [id]);
+        console.log('查询结果:', rows);  // 打印查询返回的结果
+        return rows;
+    } catch (err) {
+        console.error('查询数据失败:', err);
+        return [];
+    }
+};
+
 // 导出方法
 module.exports = {
     createWorkTable,
@@ -185,4 +201,5 @@ module.exports = {
     deleteWorkTimes,
     addArticles,
     getArticles,
+    deleteArticles,
 };

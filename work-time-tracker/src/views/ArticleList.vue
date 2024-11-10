@@ -18,6 +18,9 @@
         @updataArticleList="handlerUpdataArticle"
       />
     </div>
+    <el-backtop target=".article-list" :bottom="135">
+      <div class="floating-box">UP</div>
+    </el-backtop>
   </div>
 </template>
   
@@ -55,6 +58,7 @@ provide("updataArticleList", handlerUpdataArticle);
 
 .article-list {
   width: 70%;
+  padding: 0 10px;
   overflow-y: auto;
 }
 
@@ -83,6 +87,33 @@ provide("updataArticleList", handlerUpdataArticle);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 浮动盒子样式 */
+.floating-box {
+  width: 200px;
+  height: 70px;
+  background: linear-gradient(145deg, #6be6ff, #bcd7ff);
+  border-radius: 50% 50% 0 0;
+  color: #b8aaa0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  animation: floatUp 2s ease-in-out infinite;
+}
+
+/* 浮动动画 */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* 向上移动 */
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 </style>
   

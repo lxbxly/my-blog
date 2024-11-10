@@ -100,6 +100,31 @@ app.get('/api/getArticles', async (req, res) => {
   res.send({ message: 'success', data: articles, status: '200' });
 });
 
+
+// 删除文章的API
+app.post('/api/deleteArticles', async (req, res) => {
+  try {
+    // 检查请求体
+    const body = req.body;
+    console.log('请求的记录:', req.body);  // 打印请求的记录
+
+    // 执行插入操作
+    const deleteArticle = await database.deleteArticles(body);
+
+    // 检查是否成功插入
+    if (!deleteArticle) {
+      return res.status(400).send({ message: '删除文章失败', status:'201' });
+    }
+
+    // 如果插入成功，发送成功响应
+    res.send({ message: '删除文章成功', data: deleteArticle, status: '200' });
+  } catch (err) {
+    console.error('删除记录失败:', err); // 打印错误信息
+    // 发生错误时返回500状态码
+    res.status(500).send({ message: '请求失败', error: err.message });
+  }
+});
+
 // 启动服务器
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
