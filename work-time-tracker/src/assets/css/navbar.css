@@ -1,0 +1,126 @@
+.baby-carp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background: #E0F7FA; */
+    /* 浅蓝色背景，模仿水的颜色 */
+}
+
+.art-text {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #00BFFF;
+    /* 深蓝色文字，模仿水波 */
+    text-shadow: 2px 2px 0 #00CED1,
+        /* 第一层阴影 */
+        -2px -2px 0 #20B2AA,
+        /* 第二层阴影 */
+        4px 4px 8px rgba(0, 0, 0, 0.2);
+    /* 模糊阴影 */
+
+    background: linear-gradient(90deg, #00BFFF, #1E90FF, #00CED1);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: wave 3s infinite ease-in-out;
+    position: relative;
+}
+
+/* 水波纹效果动画 */
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(15px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 气泡效果 */
+.art-text::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 20%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #91d5dd;
+    box-shadow: 30px 50px 0 0 #77b3b3, 60px 100px 0 0 #ADD8E6, 90px 20px 0 0 #aed9df;
+    animation: bubbles 4s infinite linear;
+}
+
+/* 气泡上升动画 */
+@keyframes bubbles {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 20px; */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #42b983;
+    padding: 10px 20px;
+}
+
+.menu {
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.el-menu-item a {
+    display: block;
+    /* 使 router-link 占满整个 el-menu-item */
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    /* 去除下划线 */
+}
+
+.navbar ul {
+    background-color: transparent;
+}
+
+.el-header {
+    padding: 0;
+    height: 100px;
+}
+
+/* 菜单字体 */
+.cursive-text {
+    /* font-family: 'Ping Fang', 'Noto Sans CJK', 'Helvetica Neue', sans-serif; */
+    font-family: "Dancing Script", "Brush Script MT", cursive;
+    /* 选择草书风格的字体 */
+    font-size: 25px;
+    color: #337c7c;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
+    /* 文字阴影，增加立体感 */
+
+    transform: skew(-5deg, 0deg);
+    /* 轻微倾斜，增强草书风格 */
+}

@@ -1,0 +1,116 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background: url("https://source.unsplash.com/random/1600x900") no-repeat center/cover;
+    color: #030303;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cursive-text {
+    font-family: "Dancing Script", "Brush Script MT", cursive;
+    /* 选择草书风格的字体 */
+    font-size: 72px;
+    color: #337c7c;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
+    /* 文字阴影，增加立体感 */
+
+    transform: skew(-5deg, 0deg);
+    /* 轻微倾斜，增强草书风格 */
+}
+
+.cursive-text-up {
+    font-family: "Dancing Script", "Brush Script MT", cursive;
+    /* 选择草书风格的字体 */
+    font-size: 20px;
+    color: #569494;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
+    /* 文字阴影，增加立体感 */
+
+    transform: skew(-5deg, 0deg);
+    /* 轻微倾斜，增强草书风格 */
+}
+
+/* 引入 Google Fonts 的 Dancing Script 草书字体 */
+/* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"); */
+
+/* 云朵按钮样式 */
+.fancy-cloud-button {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 22px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, #B0E0E6, #ADD8E6);
+    /* 云朵的浅蓝渐变 */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 左侧云朵圆形 */
+.fancy-cloud-button::before,
+.fancy-cloud-button::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, #B0E0E6, #E0FFFF);
+    /* 圆形的渐变背景 */
+    border-radius: 50%;
+}
+
+/* 左侧小圆 */
+.fancy-cloud-button::before {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+    left: -20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 右侧大圆 */
+.fancy-cloud-button::after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    right: -30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 悬停效果 */
+.fancy-cloud-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.el-button:hover {
+    color: rgba(rgb(212, 203, 203), rgb(196, 221, 196), rgb(206, 206, 219), 0.7) !important;
+}
+
+/* 点击效果 */
+.fancy-cloud-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
