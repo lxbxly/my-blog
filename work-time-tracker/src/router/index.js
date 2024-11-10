@@ -5,6 +5,7 @@ import BlogPage from '../views/BlogPage.vue';
 import WorkTimeTracker from '../views/WorkTimeTracker.vue'
 import ArticleList from '../views/ArticleList.vue'
 import NotFound from '../views/NotFound.vue'
+import ToolsPage from '@/views/ToolsPage.vue';
 
 // 定义路由配置
 const routes = [
@@ -21,6 +22,11 @@ const routes = [
         path: '/workTimeTracker',
         name: 'WorkTimeTracker',
         component: WorkTimeTracker,
+    },
+    {
+        path: '/tools',
+        name: 'ToolsPage',
+        component: ToolsPage,
     },
     {
         path: '/articleList',
