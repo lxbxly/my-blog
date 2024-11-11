@@ -9,6 +9,7 @@ const emit = defineEmits();
 // 确保editor组件加载成功后赋值
 setTimeout(() => {
   initValue.value = props.content;
+  editorLoading.value = false;
 }, 1000);
 
 const initValue = ref(props.content);

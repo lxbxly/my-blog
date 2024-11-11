@@ -8,6 +8,8 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use(express.json({ limit: '10mb' })); // 增加 JSON 请求体大小限制
+app.use(express.urlencoded({ limit: '10mb', extended: true })); // 增加 URL-encoded 请求体大小限制
 
 // 添加记录的API
 app.post('/api/addRecords', async (req, res) => {
@@ -113,7 +115,7 @@ app.post('/api/deleteArticles', async (req, res) => {
 
     // 检查是否成功插入
     if (!deleteArticle) {
-      return res.status(400).send({ message: '删除文章失败', status:'201' });
+      return res.status(400).send({ message: '删除文章失败', status: '201' });
     }
 
     // 如果插入成功，发送成功响应
